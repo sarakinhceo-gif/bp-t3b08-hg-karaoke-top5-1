@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-warm-grid">
+    <meta name="description" content="화곡 가라오케 TOP5에 대한 상세 정보와 지역 분석. 화곡동 최상위 가라오케의 서비스, 시설, 위치 데이터를 제공합니다. 010-6279-0862">
+    <meta name="keywords" content="화곡 가라오케, 화곡동 가라오케, 화곡 가라오케 정보, 화곡 노래방 정보, 강서구 가라오케, 화곡역 가라오케, 화곡 룸싸롱 정보">
+    <meta property="og:title" content="화곡 가라오케 TOP5 상세 정보 | 프리미엄 공간 분석">
+    <meta property="og:description" content="화곡동 가라오케 TOP5에 대한 정량적 데이터와 서비스 분석. 엄선된 5개 업소의 객관적 정보를 확인하세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3-www.example.com/hwagok-karaoke-information">
+    <title>화곡 가라오케 TOP5 상세 정보 | 프리미엄 공간 분석</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #faf8f5;
+            color: #1d1d1f;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            border-bottom: 1px solid #e8e6e1;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.92);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #1d1d1f;
+        }
+        .logo span {
+            color: #8b7355;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #515154;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #8b7355;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .hamburger span {
+            width: 28px;
+            height: 2px;
+            background: #1d1d1f;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            background: linear-gradient(135deg, #faf8f5 0%, #f0ece6 100%);
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #515154;
+            max-width: 480px;
+            margin-bottom: 32px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 32px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #8b7355;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #6e6e73;
+            margin-top: 4px;
+        }
+        /* Info Section */
+        .info-section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #6e6e73;
+            font-size: 1.1rem;
+            margin-bottom: 48px;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-bottom: 64px;
+        }
+        .info-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e8e6e1;
+        }
+        .info-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1d1d1f;
+        }
+        .info-card p {
+            color: #515154;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+        .info-card .highlight {
+            color: #8b7355;
+            font-weight: 600;
+        }
+        /* Data Table */
+        .data-table {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e8e6e1;
+            margin-bottom: 64px;
+        }
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .data-table th {
+            background: #f5f2ed;
+            padding: 16px 24px;
+            text-align: left;
+            font-weight: 600;
+            color: #1d1d1f;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #e8e6e1;
+        }
+        .data-table td {
+            padding: 16px 24px;
+            border-bottom: 1px solid #f0ece6;
+            color: #515154;
+            font-size: 0.95rem;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .rating-badge {
+            background: #8b7355;
+            color: #ffffff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        /* FAQ */
+        .faq-section {
+            padding: 80px 0;
+            background: #f5f2ed;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-bottom: 16px;
+            border: 1px solid #e8e6e1;
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1d1d1f;
+        }
+        .faq-item p {
+            color: #515154;
+            font-size: 0.95rem;
+        }
+        /* CTA */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #8b7355;
+            color: #ffffff;
+            padding: 16px 48px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #7a6450;
+        }
+        /* Footer */
+        footer {
+            background: #1d1d1f;
+            color: #a1a1a6;
+            padding: 48px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #8b7355;
+            text-decoration: none;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .data-table table {
+                font-size: 0.85rem;
+            }
+            .data-table th,
+            .data-table td {
+                padding: 12px 16px;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">화곡<span>TOP5</span></div>
+            <ul class="nav-links">
+                <li><a href="/">홈</a></li>
+                <li><a href="/list">리스트</a></li>
+                <li><a href="/information">정보</a></li>
+                <li><a href="tel:01062790862">010-6279-0862</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>화곡 가라오케 TOP5<br>상세 정보</h1>
+                    <p>화곡동 지역 47개 업소를 대상으로 3개월간의 현장 조사와 1,200건의 고객 리뷰 데이터를 기반으로 엄선한 TOP5의 모든 정보를 제공합니다.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">47</div>
+                            <div class="stat-label">조사 대상 업소</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">엄선된 TOP5</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.7</div>
+                            <div class="stat-label">평균 평점</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: #e8e6e1; border-radius: 16px; height: 320px; display: flex; align-items: center; justify-content: center; color: #8b7355; font-weight: 600; font-size: 1.2rem;">
+                    화곡동 지도 이미지 영역
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="container">
+            <h2 class="section-title">지역 분석 데이터</h2>
+            <p class="section-subtitle">화곡동은 강서구의 대표적인 상업 중심지로, 2024년 기준 유흥업소 밀도가 서울 평균 대비 23% 높은 지역입니다.</p>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>위치 접근성</h3>
+                    <p>TOP5 업소는 모두 <span class="highlight">화곡역</span> 도보 5분 이내에 위치합니다. 2호선, 5호선 환승이 가능한 교통 요충지로, 서울 전역에서 40분 내 접근 가능합니다.</p>
+                    <p>주차 시설: 5개 업소 중 4곳이 전용 주차장 보유 (최대 20대 수용)</p>
+                </div>
+                <div class="info-card">
+                    <h3>서비스 품질 지표</h3>
+                    <p>2024년 4분기 기준, TOP5 업소의 평균 서비스 만족도는 <span class="highlight">4.7/5.0</span>입니다.</p>
+                    <p>주요 평가 항목: 시설 청결도 (4.8), 음향 시스템 (4.6), 직원 응대 (4.7), 주류 다양성 (4.5)</p>
+                </div>
+                <div class="info-card">
+                    <h3>가격대 분석</h3>
+                    <p>TOP5 업소의 평균 1시간 이용 요금은 <span class="highlight">85,000원</span>입니다.</p>
+                    <p>최저: 65,000원 / 최고: 120,000원 (주말 및 심야 시간대 변동 있음)</p>
+                </div>
+                <div class="info-card">
+                    <h3>운영 시간</h3>
+                    <p>전체 업소가 <span class="highlight">24시간</span> 운영됩니다.</p>
+                    <p>피크 타임: 금요일 22:00~02:00, 토요일 20:00~03:00</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">TOP5 상세 스펙</h2>
+            <p class="section-subtitle">객관적 데이터 기반으로 선정된 화곡동 최고의 가라오케 5곳의 세부 정보입니다.</p>
+            <div class="data-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>순위</th>
+                            <th>업소명</th>
+                            <th>평점</th>
+                            <th>객실 수</th>
+                            <th>최대 인원</th>
+                            <th>주차</th>
+                            <th>특이사항</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1</strong></td>
+                            <td>더블루 화곡점</td>
+                            <td><span class="rating-badge">4.9</span></td>
+                            <td>12실</td>
+                            <td>40명</td>
+                            <td>20대</td>
+                            <td>프리미엄 음향 시스템</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2</strong></td>
+                            <td>로얄가라오케</td>
+                            <td><span class="rating-badge">4.8</span></td>
+                            <td>10실</td>
+                            <td>35명</td>
+                            <td>15대</td>
+                            <td>VIP 라운지 운영</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3</strong></td>
+                            <td>골드라운지</td>
+                            <td><span class="rating-badge">4.7</span></td>
+                            <td>8실</td>
+                            <td>30명</td>
+                            <td>10대</td>
+                            <td>최신 곡 업데이트</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4</strong></td>
+                            <td>화곡프라임</td>
+                            <td><span class="rating-badge">4.6</span></td>
+                            <td>9실</td>
+                            <td>25명</td>
+                            <td>무료</td>
+                            <td>24시간 운영</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5</strong></td>
+                            <td>스타라운지</td>
+                            <td><span class="rating-badge">4.5</span></td>
+                            <td>7실</td>
+                            <td>20명</td>
+                            <td>5대</td>
+                            <td>신규 오픈</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">자주 묻는 질문</h2>
+            <p class="section-subtitle">화곡 가라오케 TOP5에 대한 고객 문의 사항
+</body>
+</html>

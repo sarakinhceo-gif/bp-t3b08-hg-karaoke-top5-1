@@ -7,10 +7,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-User-agent: Yeti
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-Sitemap: https://t3b08-hg-karaoke-top5-1.pages.dev/sitemap.xml
+Sitemap: https://hwagok-song-guide.namanavi.com/sitemap.xml
