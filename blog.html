@@ -1,264 +1,262 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-warm-grid">
-    <meta name="description" content="화곡 가라오케 TOP5 블로그: 데이터 기반 프리미엄 공간 분석, 서비스 비교, 그리고 업계 전문가의 통찰. 010-6279-0862">
-    <meta name="keywords" content="화곡 가라오케, 화곡동 가라오케, 화곡 가라오케 TOP5, 화곡 노래방, 강서구 가라오케, 화곡역 가라오케, 화곡 룸싸롱, 가라오케 블로그">
-    <meta property="og:title" content="화곡 가라오케 TOP5 | 블로그 – 전문가 인사이트 &amp; 리뷰">
-    <meta property="og:description" content="화곡 가라오케 TOP5 블로그: 데이터 기반 프리미엄 공간 분석, 서비스 비교, 그리고 업계 전문가의 통찰. 010-6279-0862">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hwagok-song-guide.namanavi.com/blog.html">
-    <meta property="og:image" content="https://t3.example.com/og-blog.jpg">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://hwagok-song-guide.namanavi.com/blog.html">
-    <title>화곡 가라오케 TOP5 | 블로그 – 전문가 인사이트 & 리뷰</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            background-color: #faf9f7;
-            color: #1d1c1a;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        /* Navigation */
-        nav {
-            background-color: #ffffff;
-            border-bottom: 1px solid #eae7e2;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.5rem;
-            letter-spacing: -0.02em;
-            color: #1d1c1a;
-        }
-        .logo span {
-            background: #e4b68c;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-right: 10px;
-            background-image: radial-gradient(circle at 30% 30%, #f3d5b5, #c4956a);
-        }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #2c2b28;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-            letter-spacing: 0.01em;
-        }
-        .nav-links a:hover {
-            color: #b07f5b;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 4px;
-        }
-        .hamburger span {
-            width: 26px;
-            height: 2px;
-            background: #1d1c1a;
-            border-radius: 2px;
-            display: block;
-        }
-        /* Hero */
-        .hero {
-            padding: 80px 0 56px;
-            border-bottom: 1px solid #eae7e2;
-            background: #ffffff;
-        }
-        .hero-grid {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 40px;
-        }
-        .hero-content h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: #1a1a18;
-            margin-bottom: 20px;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #4e4d49;
-            max-width: 600px;
-        }
-        /* Article / Blog */
-        .blog-section {
-            padding: 64px 0 72px;
-        }
-        .blog-card {
-            background: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.04);
-            padding: 40px 40px 48px;
-            margin-bottom: 48px;
-            border: 1px solid #efede9;
-        }
-        .blog-card .meta-tag {
-            display: inline-block;
-            background: #e7ddd0;
-            color: #3e3b36;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            padding: 4px 12px;
-            border-radius: 40px;
-            margin-bottom: 16px;
-            text-transform: uppercase;
-        }
-        .blog-card h2 {
-            font-size: 2rem;
-            font-weight: 650;
-            letter-spacing: -0.01em;
-            color: #1d1c1a;
-            margin-bottom: 24px;
-            border-left: 4px solid #c4956a;
-            padding-left: 16px;
-        }
-        .blog-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-top: 28px;
-            margin-bottom: 8px;
-            color: #2b2926;
-        }
-        .blog-card p {
-            font-size: 1.05rem;
-            color: #3b3a36;
-            margin-bottom: 20px;
-            line-height: 1.7;
-        }
-        .highlight-stats {
-            background: #f6f3ef;
-            padding: 20px 24px;
-            border-radius: 16px;
-            margin: 24px 0;
-            border-left: 4px solid #b07f5b;
-        }
-        .highlight-stats p {
-            margin-bottom: 4px;
-            font-weight: 500;
-        }
-        .data-badge {
-            display: inline-block;
-            background: #1d1c1a;
-            color: #faf9f7;
-            font-size: 0.8rem;
-            font-weight: 500;
-            padding: 2px 12px;
-            border-radius: 30px;
-            margin-right: 8px;
-        }
-        .tel-link {
-            display: inline-block;
-            background: #1d1c1a;
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 12px 28px;
-            border-radius: 40px;
-            font-size: 1rem;
-            margin-top: 8px;
-            transition: background 0.2s;
-            border: none;
-        }
-        .tel-link:hover {
-            background: #3e3b36;
-        }
-        hr {
-            border: none;
-            border-top: 1px solid #e7e3de;
-            margin: 32px 0;
-        }
-        footer {
-            background: #f2efeb;
-            padding: 32px 0;
-            text-align: center;
-            color: #4f4c47;
-            font-size: 0.9rem;
-            border-top: 1px solid #e0dbd4;
-        }
-        /* responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: white;
-                position: absolute;
-                top: 64px;
-                left: 0;
-                right: 0;
-                padding: 24px 32px;
-                box-shadow: 0 12px 20px rgba(0,0,0,0.04);
-                border-bottom: 1px solid #eae7e2;
-                gap: 20px;
-            }
-            .nav-links.open {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            .blog-card {
-                padding: 28px 20px;
-            }
-            .blog-card h2 {
-                font-size: 1.6rem;
-            }
-        }
-        @media (min-width: 769px) {
-            .nav-links {
-                display: flex !important;
-            }
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="화곡 가라오케 TOP5 블로그: 데이터 기반 프리미엄 공간 분석, 서비스 비교, 그리고 업계 전문가의 통찰.">
+ <meta name="keywords" content="화곡 가라오케, 화곡동 가라오케, 화곡 가라오케 TOP5, 화곡 노래방, 강서구 가라오케, 화곡역 가라오케, 화곡 룸싸롱, 가라오케 블로그">
+ <meta property="og:title" content="화곡 가라오케 TOP5 | 블로그 – 전문가 인사이트 &amp; 리뷰">
+ <meta property="og:description" content="화곡 가라오케 TOP5 블로그: 데이터 기반 프리미엄 공간 분석, 서비스 비교, 그리고 업계 전문가의 통찰.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://hwagok-song-guide.namanavi.com/blog.html">
+ <meta property="og:image" content="https://t3.example.com/og-blog.jpg">
+ <meta name="robots" content="index, follow">
+ <link rel="canonical" href="https://hwagok-song-guide.namanavi.com/blog.html">
+ <title>화곡 가라오케 TOP5 | 블로그 – 전문가 인사이트 & 리뷰</title>
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ }
+ body {
+ background-color: #faf9f7;
+ color: #1d1c1a;
+ line-height: 1.6;
+ font-weight: 400;
+ }
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ /* Navigation */
+ nav {
+ background-color: #ffffff;
+ border-bottom: 1px solid #eae7e2;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+ }
+ .nav-inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 64px;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ .logo {
+ display: flex;
+ align-items: center;
+ text-decoration: none;
+ font-weight: 600;
+ font-size: 1.5rem;
+ letter-spacing: -0.02em;
+ color: #1d1c1a;
+ }
+ .logo span {
+ background: #e4b68c;
+ width: 32px;
+ height: 32px;
+ border-radius: 50%;
+ display: inline-block;
+ margin-right: 10px;
+ background-image: radial-gradient(circle at 30% 30%, #f3d5b5, #c4956a);
+ }
+ .nav-links {
+ display: flex;
+ gap: 32px;
+ align-items: center;
+ }
+ .nav-links a {
+ text-decoration: none;
+ color: #2c2b28;
+ font-weight: 500;
+ font-size: 0.95rem;
+ transition: color 0.2s;
+ letter-spacing: 0.01em;
+ }
+ .nav-links a:hover {
+ color: #b07f5b;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 4px;
+ }
+ .hamburger span {
+ width: 26px;
+ height: 2px;
+ background: #1d1c1a;
+ border-radius: 2px;
+ display: block;
+ }
+ /* Hero */
+ .hero {
+ padding: 80px 0 56px;
+ border-bottom: 1px solid #eae7e2;
+ background: #ffffff;
+ }
+ .hero-grid {
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: 40px;
+ }
+ .hero-content h1 {
+ font-size: 2.8rem;
+ font-weight: 700;
+ line-height: 1.2;
+ letter-spacing: -0.02em;
+ color: #1a1a18;
+ margin-bottom: 20px;
+ }
+ .hero-content p {
+ font-size: 1.2rem;
+ color: #4e4d49;
+ max-width: 600px;
+ }
+ /* Article / Blog */
+ .blog-section {
+ padding: 64px 0 72px;
+ }
+ .blog-card {
+ background: #ffffff;
+ border-radius: 20px;
+ box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+ padding: 40px 40px 48px;
+ margin-bottom: 48px;
+ border: 1px solid #efede9;
+ }
+ .blog-card .meta-tag {
+ display: inline-block;
+ background: #e7ddd0;
+ color: #3e3b36;
+ font-size: 0.75rem;
+ font-weight: 600;
+ letter-spacing: 0.04em;
+ padding: 4px 12px;
+ border-radius: 40px;
+ margin-bottom: 16px;
+ text-transform: uppercase;
+ }
+ .blog-card h2 {
+ font-size: 2rem;
+ font-weight: 650;
+ letter-spacing: -0.01em;
+ color: #1d1c1a;
+ margin-bottom: 24px;
+ border-left: 4px solid #c4956a;
+ padding-left: 16px;
+ }
+ .blog-card h3 {
+ font-size: 1.4rem;
+ font-weight: 600;
+ margin-top: 28px;
+ margin-bottom: 8px;
+ color: #2b2926;
+ }
+ .blog-card p {
+ font-size: 1.05rem;
+ color: #3b3a36;
+ margin-bottom: 20px;
+ line-height: 1.7;
+ }
+ .highlight-stats {
+ background: #f6f3ef;
+ padding: 20px 24px;
+ border-radius: 16px;
+ margin: 24px 0;
+ border-left: 4px solid #b07f5b;
+ }
+ .highlight-stats p {
+ margin-bottom: 4px;
+ font-weight: 500;
+ }
+ .data-badge {
+ display: inline-block;
+ background: #1d1c1a;
+ color: #faf9f7;
+ font-size: 0.8rem;
+ font-weight: 500;
+ padding: 2px 12px;
+ border-radius: 30px;
+ margin-right: 8px;
+ }
+ .tel-link {
+ display: inline-block;
+ background: #1d1c1a;
+ color: white;
+ text-decoration: none;
+ font-weight: 600;
+ padding: 12px 28px;
+ border-radius: 40px;
+ font-size: 1rem;
+ margin-top: 8px;
+ transition: background 0.2s;
+ border: none;
+ }
+ .tel-link:hover {
+ background: #3e3b36;
+ }
+ hr {
+ border: none;
+ border-top: 1px solid #e7e3de;
+ margin: 32px 0;
+ }
+ footer {
+ background: #f2efeb;
+ padding: 32px 0;
+ text-align: center;
+ color: #4f4c47;
+ font-size: 0.9rem;
+ border-top: 1px solid #e0dbd4;
+ }
+ /* responsive */
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none;
+ flex-direction: column;
+ background: white;
+ position: absolute;
+ top: 64px;
+ left: 0;
+ right: 0;
+ padding: 24px 32px;
+ box-shadow: 0 12px 20px rgba(0,0,0,0.04);
+ border-bottom: 1px solid #eae7e2;
+ gap: 20px;
+ }
+ .nav-links.open {
+ display: flex;
+ }
+ .hamburger {
+ display: flex;
+ }
+ .hero-content h1 {
+ font-size: 2rem;
+ }
+ .blog-card {
+ padding: 28px 20px;
+ }
+ .blog-card h2 {
+ font-size: 1.6rem;
+ }
+ }
+ @media (min-width: 769px) {
+ .nav-links {
+ display: flex !important;
+ }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
@@ -324,7 +322,7 @@
 <section class="blog-section">
 <div class="container">
 <p>세부 운영 사항과 당일 좌석 상황은 아래 연락처로 문의하면 안내받을 수 있습니다.</p>
-<a class="tel-link" href="tel:01062790862">01062790862</a>
+
 </div>
 </section>
 </main>

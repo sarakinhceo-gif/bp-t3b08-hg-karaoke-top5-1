@@ -1,315 +1,313 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-warm-grid">
-    <meta name="description" content="화곡 가라오케 TOP5에 대한 상세 정보와 지역 분석. 화곡동 최상위 가라오케의 서비스, 시설, 위치 데이터를 제공합니다. 010-6279-0862">
-    <meta name="keywords" content="화곡 가라오케, 화곡동 가라오케, 화곡 가라오케 정보, 화곡 노래방 정보, 강서구 가라오케, 화곡역 가라오케, 화곡 룸싸롱 정보">
-    <meta property="og:title" content="화곡 가라오케 TOP5 상세 정보 | 프리미엄 공간 분석">
-    <meta property="og:description" content="화곡 가라오케 TOP5에 대한 상세 정보와 지역 분석. 화곡동 최상위 가라오케의 서비스, 시설, 위치 데이터를 제공합니다. 010-6279-0862">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hwagok-song-guide.namanavi.com/about.html">
-    <title>화곡 가라오케 TOP5 상세 정보 | 프리미엄 공간 분석</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #faf8f5;
-            color: #1d1d1f;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        /* Navigation */
-        nav {
-            background: #ffffff;
-            border-bottom: 1px solid #e8e6e1;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(12px);
-            background: rgba(255, 255, 255, 0.92);
-        }
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 64px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: #1d1d1f;
-        }
-        .logo span {
-            color: #8b7355;
-        }
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #515154;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        .nav-links a:hover {
-            color: #8b7355;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            padding: 8px;
-        }
-        .hamburger span {
-            width: 28px;
-            height: 2px;
-            background: #1d1d1f;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-        /* Hero */
-        .hero {
-            padding: 80px 0 60px;
-            background: linear-gradient(135deg, #faf8f5 0%, #f0ece6 100%);
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        .hero-content h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.15;
-            margin-bottom: 24px;
-        }
-        .hero-content p {
-            font-size: 1.2rem;
-            color: #515154;
-            max-width: 480px;
-            margin-bottom: 32px;
-        }
-        .hero-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 32px;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-number {
-            font-size: 2.4rem;
-            font-weight: 700;
-            color: #8b7355;
-        }
-        .stat-label {
-            font-size: 0.9rem;
-            color: #6e6e73;
-            margin-top: 4px;
-        }
-        /* Info Section */
-        .info-section {
-            padding: 80px 0;
-        }
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #6e6e73;
-            font-size: 1.1rem;
-            margin-bottom: 48px;
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 32px;
-            margin-bottom: 64px;
-        }
-        .info-card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid #e8e6e1;
-        }
-        .info-card h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #1d1d1f;
-        }
-        .info-card p {
-            color: #515154;
-            font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-        .info-card .highlight {
-            color: #8b7355;
-            font-weight: 600;
-        }
-        /* Data Table */
-        .data-table {
-            background: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid #e8e6e1;
-            margin-bottom: 64px;
-        }
-        .data-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .data-table th {
-            background: #f5f2ed;
-            padding: 16px 24px;
-            text-align: left;
-            font-weight: 600;
-            color: #1d1d1f;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #e8e6e1;
-        }
-        .data-table td {
-            padding: 16px 24px;
-            border-bottom: 1px solid #f0ece6;
-            color: #515154;
-            font-size: 0.95rem;
-        }
-        .data-table tr:last-child td {
-            border-bottom: none;
-        }
-        .rating-badge {
-            background: #8b7355;
-            color: #ffffff;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        /* FAQ */
-        .faq-section {
-            padding: 80px 0;
-            background: #f5f2ed;
-        }
-        .faq-item {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 24px 32px;
-            margin-bottom: 16px;
-            border: 1px solid #e8e6e1;
-        }
-        .faq-item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            color: #1d1d1f;
-        }
-        .faq-item p {
-            color: #515154;
-            font-size: 0.95rem;
-        }
-        /* CTA */
-        .cta-section {
-            padding: 80px 0;
-            text-align: center;
-        }
-        .cta-button {
-            display: inline-block;
-            background: #8b7355;
-            color: #ffffff;
-            padding: 16px 48px;
-            border-radius: 40px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-        .cta-button:hover {
-            background: #7a6450;
-        }
-        /* Footer */
-        footer {
-            background: #1d1d1f;
-            color: #a1a1a6;
-            padding: 48px 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #8b7355;
-            text-decoration: none;
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-content p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-            .data-table table {
-                font-size: 0.85rem;
-            }
-            .data-table th,
-            .data-table td {
-                padding: 12px 16px;
-            }
-        }
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2.2rem;
-            }
-            .stat-number {
-                font-size: 1.8rem;
-            }
-            .container {
-                padding: 0 16px;
-            }
-        }
-    </style>
-  <link rel="canonical" href="https://hwagok-song-guide.namanavi.com/about.html">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="화곡 가라오케 TOP5에 대한 상세 정보와 지역 분석. 화곡동 최상위 가라오케의 서비스, 시설, 위치 데이터를 제공합니다.">
+ <meta name="keywords" content="화곡 가라오케, 화곡동 가라오케, 화곡 가라오케 정보, 화곡 노래방 정보, 강서구 가라오케, 화곡역 가라오케, 화곡 룸싸롱 정보">
+ <meta property="og:title" content="화곡 가라오케 TOP5 상세 정보 | 프리미엄 공간 분석">
+ <meta property="og:description" content="화곡 가라오케 TOP5에 대한 상세 정보와 지역 분석. 화곡동 최상위 가라오케의 서비스, 시설, 위치 데이터를 제공합니다.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://hwagok-song-guide.namanavi.com/about.html">
+ <title>화곡 가라오케 TOP5 상세 정보 | 프리미엄 공간 분석</title>
+ <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ background: #faf8f5;
+ color: #1d1d1f;
+ line-height: 1.6;
+ }
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ /* Navigation */
+ nav {
+ background: #ffffff;
+ border-bottom: 1px solid #e8e6e1;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ backdrop-filter: blur(12px);
+ background: rgba(255, 255, 255, 0.92);
+ }
+ .nav-inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 64px;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ .logo {
+ font-size: 1.4rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: #1d1d1f;
+ }
+ .logo span {
+ color: #8b7355;
+ }
+ .nav-links {
+ display: flex;
+ gap: 32px;
+ list-style: none;
+ }
+ .nav-links a {
+ text-decoration: none;
+ color: #515154;
+ font-size: 0.95rem;
+ font-weight: 500;
+ transition: color 0.2s;
+ }
+ .nav-links a:hover {
+ color: #8b7355;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ padding: 8px;
+ }
+ .hamburger span {
+ width: 28px;
+ height: 2px;
+ background: #1d1d1f;
+ border-radius: 2px;
+ transition: 0.3s;
+ }
+ /* Hero */
+ .hero {
+ padding: 80px 0 60px;
+ background: linear-gradient(135deg, #faf8f5 0%, #f0ece6 100%);
+ }
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ align-items: center;
+ }
+ .hero-content h1 {
+ font-size: 3.2rem;
+ font-weight: 700;
+ letter-spacing: -0.03em;
+ line-height: 1.15;
+ margin-bottom: 24px;
+ }
+ .hero-content p {
+ font-size: 1.2rem;
+ color: #515154;
+ max-width: 480px;
+ margin-bottom: 32px;
+ }
+ .hero-stats {
+ display: flex;
+ gap: 40px;
+ margin-top: 32px;
+ }
+ .stat-item {
+ text-align: center;
+ }
+ .stat-number {
+ font-size: 2.4rem;
+ font-weight: 700;
+ color: #8b7355;
+ }
+ .stat-label {
+ font-size: 0.9rem;
+ color: #6e6e73;
+ margin-top: 4px;
+ }
+ /* Info Section */
+ .info-section {
+ padding: 80px 0;
+ }
+ .section-title {
+ font-size: 2rem;
+ font-weight: 700;
+ text-align: center;
+ margin-bottom: 16px;
+ letter-spacing: -0.02em;
+ }
+ .section-subtitle {
+ text-align: center;
+ color: #6e6e73;
+ font-size: 1.1rem;
+ margin-bottom: 48px;
+ max-width: 640px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .info-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ margin-bottom: 64px;
+ }
+ .info-card {
+ background: #ffffff;
+ border-radius: 16px;
+ padding: 32px;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+ border: 1px solid #e8e6e1;
+ }
+ .info-card h3 {
+ font-size: 1.3rem;
+ font-weight: 600;
+ margin-bottom: 16px;
+ color: #1d1d1f;
+ }
+ .info-card p {
+ color: #515154;
+ font-size: 0.95rem;
+ margin-bottom: 12px;
+ }
+ .info-card .highlight {
+ color: #8b7355;
+ font-weight: 600;
+ }
+ /* Data Table */
+ .data-table {
+ background: #ffffff;
+ border-radius: 16px;
+ overflow: hidden;
+ border: 1px solid #e8e6e1;
+ margin-bottom: 64px;
+ }
+ .data-table table {
+ width: 100%;
+ border-collapse: collapse;
+ }
+ .data-table th {
+ background: #f5f2ed;
+ padding: 16px 24px;
+ text-align: left;
+ font-weight: 600;
+ color: #1d1d1f;
+ font-size: 0.9rem;
+ border-bottom: 1px solid #e8e6e1;
+ }
+ .data-table td {
+ padding: 16px 24px;
+ border-bottom: 1px solid #f0ece6;
+ color: #515154;
+ font-size: 0.95rem;
+ }
+ .data-table tr:last-child td {
+ border-bottom: none;
+ }
+ .rating-badge {
+ background: #8b7355;
+ color: #ffffff;
+ padding: 2px 10px;
+ border-radius: 12px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ }
+ /* FAQ */
+ .faq-section {
+ padding: 80px 0;
+ background: #f5f2ed;
+ }
+ .faq-item {
+ background: #ffffff;
+ border-radius: 12px;
+ padding: 24px 32px;
+ margin-bottom: 16px;
+ border: 1px solid #e8e6e1;
+ }
+ .faq-item h4 {
+ font-size: 1.1rem;
+ font-weight: 600;
+ margin-bottom: 8px;
+ color: #1d1d1f;
+ }
+ .faq-item p {
+ color: #515154;
+ font-size: 0.95rem;
+ }
+ /* CTA */
+ .cta-section {
+ padding: 80px 0;
+ text-align: center;
+ }
+ .cta-button {
+ display: inline-block;
+ background: #8b7355;
+ color: #ffffff;
+ padding: 16px 48px;
+ border-radius: 40px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ text-decoration: none;
+ transition: background 0.3s;
+ }
+ .cta-button:hover {
+ background: #7a6450;
+ }
+ /* Footer */
+ footer {
+ background: #1d1d1f;
+ color: #a1a1a6;
+ padding: 48px 0;
+ text-align: center;
+ font-size: 0.9rem;
+ }
+ footer a {
+ color: #8b7355;
+ text-decoration: none;
+ }
+ /* Responsive */
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none;
+ }
+ .hamburger {
+ display: flex;
+ }
+ .hero-grid {
+ grid-template-columns: 1fr;
+ text-align: center;
+ }
+ .hero-content p {
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .hero-stats {
+ justify-content: center;
+ }
+ .info-grid {
+ grid-template-columns: 1fr;
+ }
+ .data-table table {
+ font-size: 0.85rem;
+ }
+ .data-table th,
+ .data-table td {
+ padding: 12px 16px;
+ }
+ }
+ @media (max-width: 480px) {
+ .hero-content h1 {
+ font-size: 2.2rem;
+ }
+ .stat-number {
+ font-size: 1.8rem;
+ }
+ .container {
+ padding: 0 16px;
+ }
+ }
+ </style>
+ <link rel="canonical" href="https://hwagok-song-guide.namanavi.com/about.html">
   <meta name="twitter:card" content="summary">
 </head>
 <body>
@@ -369,7 +367,7 @@
 <div class="container">
 <h2 class="section-title">문의 안내</h2>
 <p>운영 시간, 좌석 상황, 이용 절차 등 세부 사항은 아래 연락처를 통해 확인할 수 있습니다.</p>
-<a class="cta-button" href="tel:01062790862">전화 문의 01062790862</a>
+
 </div>
 </section>
 </main>
