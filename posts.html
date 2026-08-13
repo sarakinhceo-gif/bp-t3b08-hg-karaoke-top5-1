@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (1/2) · t3b08-hg-karaoke-top5-1</title>
+  <meta name="description" content="t3b08-hg-karaoke-top5-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hwagok-song-guide.namanavi.com/posts.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ background: #faf8f5;
+ color: #1d1d1f;
+ line-height: 1.6;
+ }
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ /* Navigation */
+ nav {
+ background: #ffffff;
+ border-bottom: 1px solid #e8e6e1;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ backdrop-filter: blur(12px);
+ background: rgba(255, 255, 255, 0.92);
+ }
+ .nav-inner {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 64px;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 24px;
+ }
+ .logo {
+ font-size: 1.4rem;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ color: #1d1d1f;
+ }
+ .logo span {
+ color: #8b7355;
+ }
+ .nav-links {
+ display: flex;
+ gap: 32px;
+ list-style: none;
+ }
+ .nav-links a {
+ text-decoration: none;
+ color: #515154;
+ font-size: 0.95rem;
+ font-weight: 500;
+ transition: color 0.2s;
+ }
+ .nav-links a:hover {
+ color: #8b7355;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ padding: 8px;
+ }
+ .hamburger span {
+ width: 28px;
+ height: 2px;
+ background: #1d1d1f;
+ border-radius: 2px;
+ transition: 0.3s;
+ }
+ /* Hero */
+ .hero {
+ padding: 80px 0 60px;
+ background: linear-gradient(135deg, #faf8f5 0%, #f0ece6 100%);
+ }
+ .hero-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ align-items: center;
+ }
+ .hero-content h1 {
+ font-size: 3.2rem;
+ font-weight: 700;
+ letter-spacing: -0.03em;
+ line-height: 1.15;
+ margin-bottom: 24px;
+ }
+ .hero-content p {
+ font-size: 1.2rem;
+ color: #515154;
+ max-width: 480px;
+ margin-bottom: 32px;
+ }
+ .hero-stats {
+ display: flex;
+ gap: 40px;
+ margin-top: 32px;
+ }
+ .stat-item {
+ text-align: center;
+ }
+ .stat-number {
+ font-size: 2.4rem;
+ font-weight: 700;
+ color: #8b7355;
+ }
+ .stat-label {
+ font-size: 0.9rem;
+ color: #6e6e73;
+ margin-top: 4px;
+ }
+ /* Info Section */
+ .info-section {
+ padding: 80px 0;
+ }
+ .section-title {
+ font-size: 2rem;
+ font-weight: 700;
+ text-align: center;
+ margin-bottom: 16px;
+ letter-spacing: -0.02em;
+ }
+ .section-subtitle {
+ text-align: center;
+ color: #6e6e73;
+ font-size: 1.1rem;
+ margin-bottom: 48px;
+ max-width: 640px;
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .info-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ margin-bottom: 64px;
+ }
+ .info-card {
+ background: #ffffff;
+ border-radius: 16px;
+ padding: 32px;
+ box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+ border: 1px solid #e8e6e1;
+ }
+ .info-card h3 {
+ font-size: 1.3rem;
+ font-weight: 600;
+ margin-bottom: 16px;
+ color: #1d1d1f;
+ }
+ .info-card p {
+ color: #515154;
+ font-size: 0.95rem;
+ margin-bottom: 12px;
+ }
+ .info-card .highlight {
+ color: #8b7355;
+ font-weight: 600;
+ }
+ /* Data Table */
+ .data-table {
+ background: #ffffff;
+ border-radius: 16px;
+ overflow: hidden;
+ border: 1px solid #e8e6e1;
+ margin-bottom: 64px;
+ }
+ .data-table table {
+ width: 100%;
+ border-collapse: collapse;
+ }
+ .data-table th {
+ background: #f5f2ed;
+ padding: 16px 24px;
+ text-align: left;
+ font-weight: 600;
+ color: #1d1d1f;
+ font-size: 0.9rem;
+ border-bottom: 1px solid #e8e6e1;
+ }
+ .data-table td {
+ padding: 16px 24px;
+ border-bottom: 1px solid #f0ece6;
+ color: #515154;
+ font-size: 0.95rem;
+ }
+ .data-table tr:last-child td {
+ border-bottom: none;
+ }
+ .rating-badge {
+ background: #8b7355;
+ color: #ffffff;
+ padding: 2px 10px;
+ border-radius: 12px;
+ font-size: 0.85rem;
+ font-weight: 600;
+ }
+ /* FAQ */
+ .faq-section {
+ padding: 80px 0;
+ background: #f5f2ed;
+ }
+ .faq-item {
+ background: #ffffff;
+ border-radius: 12px;
+ padding: 24px 32px;
+ margin-bottom: 16px;
+ border: 1px solid #e8e6e1;
+ }
+ .faq-item h4 {
+ font-size: 1.1rem;
+ font-weight: 600;
+ margin-bottom: 8px;
+ color: #1d1d1f;
+ }
+ .faq-item p {
+ color: #515154;
+ font-size: 0.95rem;
+ }
+ /* CTA */
+ .cta-section {
+ padding: 80px 0;
+ text-align: center;
+ }
+ .cta-button {
+ display: inline-block;
+ background: #8b7355;
+ color: #ffffff;
+ padding: 16px 48px;
+ border-radius: 40px;
+ font-size: 1.1rem;
+ font-weight: 600;
+ text-decoration: none;
+ transition: background 0.3s;
+ }
+ .cta-button:hover {
+ background: #7a6450;
+ }
+ /* Footer */
+ footer {
+ background: #1d1d1f;
+ color: #a1a1a6;
+ padding: 48px 0;
+ text-align: center;
+ font-size: 0.9rem;
+ }
+ footer a {
+ color: #8b7355;
+ text-decoration: none;
+ }
+ /* Responsive */
+ @media (max-width: 768px) {
+ .nav-links {
+ display: none;
+ }
+ .hamburger {
+ display: flex;
+ }
+ .hero-grid {
+ grid-template-columns: 1fr;
+ text-align: center;
+ }
+ .hero-content p {
+ margin-left: auto;
+ margin-right: auto;
+ }
+ .hero-stats {
+ justify-content: center;
+ }
+ .info-grid {
+ grid-template-columns: 1fr;
+ }
+ .data-table table {
+ font-size: 0.85rem;
+ }
+ .data-table th,
+ .data-table td {
+ padding: 12px 16px;
+ }
+ }
+ @media (max-width: 480px) {
+ .hero-content h1 {
+ font-size: 2.2rem;
+ }
+ .stat-number {
+ font-size: 1.8rem;
+ }
+ .container {
+ padding: 0 16px;
+ }
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (1/2) · t3b08-hg-karaoke-top5-1">
+  <meta property="og:description" content="t3b08-hg-karaoke-top5-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hwagok-song-guide.namanavi.com/posts.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 40개 · 1/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260705-140.html">화곡 가라오케 이용 전 반드시 확인해야 할 시설별 특징과 매력 포인트</a>
+        <p class="post-item__summary">화곡 일대에서 가라오케를 찾고 있다면 각 업소가 가진 고유한 분위기와 서비스의 차이를 이해하는 것이 중요합니다. 단순히 노래를 부르는 공간을 넘어 일상 속의 스트레스를 해소하고 즐거운 모임을 가질 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0086.html">화곡 가라오케 TOP5 선정 기준과 마포/합정 인디 소셜 라운지 가이드 비교 분석</a>
+        <p class="post-item__summary">화곡 가라오케 TOP5 리스트를 검색할 때 대다수의 이용자는 위치와 인지도를 최우선으로 꼽습니다. 하지만 프라이빗한 소인원 파티를 원한다면 규모보다는 세심한 서비스와 공간의 분위기가 더 중요합니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0087.html">화곡 가라오케 TOP5 정보 대신 확인하는 서울 동대문 마사지 예약 안내</a>
+        <p class="post-item__summary">많은 이들이 화곡 가라오케 TOP5와 같은 유흥 정보를 검색하지만 정작 피로를 풀 곳을 찾지 못해 헤매는 경우가 많습니다. 막연한 정보에 의존하다 보면 정작 필요한 신체 이완을 놓치고 시간만 낭비하</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0088.html">화곡 가라오케 TOP5 위치 확인법과 지수 성장 클리닉 정보</a>
+        <p class="post-item__summary">온라인에서 화곡 가라오케 TOP5 리스트를 검색하다 보면 정확한 위치 정보가 없는 경우가 많아 답답함을 느낄 때가 있습니다. 정보의 구조를 제대로 이해하면 더 효율적으로 원하는 장소를 찾을 수 있습</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0089.html">화곡 가라오케 TOP5 선정과 마포 홍대 로컬 럭셔리 밤문화 가이드의 조화</a>
+        <p class="post-item__summary">지인들과 갑작스러운 모임을 가질 때면 매번 장소 선정에 고민이 깊어집니다. 화곡 가라오케 TOP5 리스트를 검색하며 적당한 분위기를 찾다가도, 결국 더 폭넓은 선택지가 있는 지역으로 눈길을 돌리게 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0090.html">화곡 가라오케 TOP5 분석과 마포 코인노래방 방음 시설 비교 가이드 활용법</a>
+        <p class="post-item__summary">많은 이들이 시설의 규모가 클수록 방음이 완벽할 것이라는 막연한 오해를 하곤 합니다. 하지만 화곡 가라오케 TOP5를 살펴보는 과정에서 알 수 있듯이, 공간의 크기보다는 시공 단계에서의 차음 기술이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0091.html">화곡 가라오케 TOP5 선정 기준과 마포 셔츠룸 리얼 후기 소셜 마케팅 가이드</a>
+        <p class="post-item__summary">깔끔한 서비스 매너와 합리적인 비용, 그리고 적절한 위치 선정까지 모든 조건을 만족하는 장소를 찾기란 쉬운 일이 아닙니다. 화곡 가라오케 TOP5 리스트를 작성할 때도 이러한 까다로운 조건들을 하나</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0092.html">화곡 가라오케 TOP5 데이터 분석과 여기에서 확인</a>
+        <p class="post-item__summary">혹시 여러분이 정성껏 작성한 블로그 글이 검색 엔진에서 제대로 노출되지 않아 답답함을 느낀 적이 있으신가요? 화곡 가라오케 TOP5와 같은 경쟁이 치열한 키워드를 다룰 때는 노출의 순위보다 검색 결</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0093.html">화곡 가라오케 TOP5 선정으로 알아보는 마포 유흥 투명 정찰제 가격 정보 디렉토리의 가치</a>
+        <p class="post-item__summary">유흥 시장의 투명성을 확보하기 위해 화곡 가라오케 TOP5와 같은 비교 분석은 필수적인 단계입니다. 많은 소비자가 현장에서 발생하는 불투명한 추가 비용 때문에 스트레스를 경험하곤 합니다. 이러한 문</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0094.html">화곡 가라오케 TOP5 비교와 관련 정보 보기의 품질 판단 기준</a>
+        <p class="post-item__summary">디지털 환경에서 양질의 정보를 선별하는 작업은 마치 화곡 가라오케 TOP5 리스트를 작성하는 과정과 닮아 있습니다. 정보의 근원이 깨끗해야 결과물의 가치도 상승하기 때문입니다. 이러한 맥락에서 콘텐</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0095.html">화곡 가라오케 TOP5 검색하는 이유와 마포 셔츠룸 예약 시 눈탱이 피하는 법</a>
+        <p class="post-item__summary">화곡 가라오케 TOP5를 검색하며 화려한 밤 문화를 찾는 이들이 가장 쉽게 저지르는 실수는 가격 체계를 사전에 파악하지 않는 것입니다. 특히 정보가 부족한 상태에서 예약을 진행하다 보면 현장에서 예</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0096.html">화곡 가라오케 TOP5 주변 입지 확인과 4</a>
+        <p class="post-item__summary">공간의 가치는 입지에 따라 결정되듯, 기술 학습의 질은 선택한 교육 과정에 달려 있습니다. 화곡 가라오케 TOP5를 선정할 때 대중교통 접근성과 주차 편의를 확인하는 것과 같이, 4-에이전트 루프 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0097.html">화곡 가라오케 TOP5 선정과 셔츠룸 예약 시 고려해야 할 이용 수칙</a>
+        <p class="post-item__summary">갑작스러운 모임이나 비즈니스 접대 상황에서 예상치 못한 장소를 방문하게 되면 당황하기 마련입니다. 특히 화곡 가라오케 TOP5 리스트를 검색하는 초행자들은 정보의 홍수 속에서 어떤 곳이 안전한지 판</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0098.html">화곡 가라오케 TOP5 트렌드 분석과 구글 틈새 키워드 트래픽 외환 거래 전략 활용</a>
+        <p class="post-item__summary">많은 투자자가 외환 거래는 무조건 밤샘 분석이 필수라는 오해를 가지고 접근하지만 이는 사실과 다릅니다. 특정 키워드 유입량을 활용한 트래픽 분석이 가능하다면 효율적인 시간대를 선택해 리스크를 현저히</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0099.html">화곡 가라오케 TOP5 관리와 같은 구글 봇 정밀 검진 및 크롤 버짓 밀착 간호 원칙</a>
+        <p class="post-item__summary">웹사이트의 효율적인 운영을 위해서는 적절한 인원 구성과 구체적인 타깃 설정이 선행되어야 합니다. 화곡 가라오케 TOP5 정보를 최적화하는 과정과 마찬가지로 기술적인 정교함이 뒷받침되지 않으면 아무리</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0100.html">화곡 가라오케 TOP5 비교 기법으로 정하는 마포 단체 회식용 대형 룸 노래방 가격 정보</a>
+        <p class="post-item__summary">여러분은 회식 장소를 정할 때 가장 우선적으로 고려하는 조건이 무엇입니까. 분위기인지, 가격인지, 혹은 이동의 편리함인지 기준을 명확히 하는 것이 성공적인 모임을 만드는 첫 단추입니다. 화곡 가라오</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0101.html">화곡 가라오케 TOP5 리스트로 살펴보는 신뢰도 높은 셔츠룸 사이트 활용법</a>
+        <p class="post-item__summary">지역 내 유흥 정보를 탐색하다 보면 흔히 접하게 되는 화곡 가라오케 TOP5와 같은 순위표는 이용자의 선택을 돕는 유용한 지표가 됩니다. 하지만 수많은 정보 사이에서 과장된 광고를 걸러내고 실제 서</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260719-0102.html">화곡 가라오케 TOP5 검색하는 당신을 위한 합정 셔츠룸 단골들이 뽑은 핫플 매거진 비교</a>
+        <p class="post-item__summary">많은 이들이 화곡 가라오케 TOP5 정보를 검색하며 더 나은 서비스를 경험하고자 노력합니다. 하지만 강서권의 일반적인 정보와 마포권의 트렌디한 문화를 비교해 보면 가격과 구성 면에서 큰 차이를 발견</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0141.html">화곡 가라오케 TOP5 선정으로 알아보는 구글 알고리즘 고신용 도메인 보증 카드 발급 절차</a>
+        <p class="post-item__summary">온라인 플랫폼의 신뢰도를 평가할 때 데이터의 출처는 매우 중요한 지표로 작용합니다. 화곡 가라오케 TOP5 같은 정보를 검색할 때 사용자는 해당 정보가 얼마나 신뢰할 수 있는지를 먼저 고려하게 됩니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0142.html">화곡 가라오케 TOP5와 비교하는 마포 홍대 단체 가라오케 예약 가이드</a>
+        <p class="post-item__summary">지역별 유흥 시설을 선택할 때는 각기 다른 매력을 분석하는 것이 중요합니다. 화곡 가라오케 TOP5는 지역 중심의 밀착형 서비스가 강점이며, 특정 타겟층을 위한 세밀한 구성이 특징입니다. 반면 번화</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <span class="pager__current">1</span>
+      <a class="pager__link" href="posts-2.html">2</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
